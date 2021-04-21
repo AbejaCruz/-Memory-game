@@ -1,8 +1,7 @@
 let word=""
-const words = ["Hola", "Tarde", "Noche","ADIOS"];
-
+const words = ["Hola hipopotamo", "Hola hipopotamo", "Noche  hipopotamo","ADIOS  hipopotamo"];
+const form = document.getElementById("form")
 randomWord()
-
 
 function randomWord(){
   
@@ -13,10 +12,21 @@ start()
 
 function start() {
     document.getElementById("word").innerHTML = word
-    setTimeout(deleteWord,1000);
+    setTimeout(deleteWord,900);
 }
-
 function deleteWord(){
     document.getElementById("word").innerHTML = ``
 }
 
+form.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    const wordInput = form['wordInput']
+    
+    if(wordInput.value === word){
+        alert("Iguales")
+    }
+
+    if(wordInput.value != word){
+        alert("Diferentes")
+    }
+})

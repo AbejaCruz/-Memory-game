@@ -1,6 +1,15 @@
-let word="test"
+let word=""
+const words = ["Hola", "Tarde", "Noche","ADIOS"];
 
+randomWord()
+
+
+function randomWord(){
+  
+var randomNumber = Math.floor(Math.random()*words.length);
+word=words[randomNumber]
 start()
+}
 
 function start() {
     document.getElementById("word").innerHTML = word
@@ -10,3 +19,4 @@ function start() {
 function deleteWord(){
     document.getElementById("word").innerHTML = ``
 }
+

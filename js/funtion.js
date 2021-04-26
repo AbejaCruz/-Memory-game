@@ -64,9 +64,9 @@ form.addEventListener("submit", async (e) => {
         document.getElementById('validate').disabled = false
         document.getElementById('start').disabled = true
         document.getElementById('wordInput').disabled = false
-        document.getElementById('heart_3').src = "https://abejacruz.github.io/Memory-game/img/heart.png"
-        document.getElementById('heart_2').src = "https://abejacruz.github.io/Memory-game/img/heart.png"
-        document.getElementById('heart_1').src = "https://abejacruz.github.io/Memory-game/img/heart.png"
+        document.getElementById('heart_3').src = "./img/heart.png"
+        document.getElementById('heart_2').src = "./img/heart.png"
+        document.getElementById('heart_1').src = "./img/heart.png"
         lives = 4
         randomWord()
     }
@@ -101,13 +101,13 @@ form.addEventListener("submit", async (e) => {
                 }, 900)
             }
             if (lives === 2) {
-                document.getElementById('heart_3').src = "https://abejacruz.github.io/Memory-game/img/heart-p.png"
+                document.getElementById('heart_3').src = "./img/heart-p.png"
             }
             if (lives === 1) {
-                document.getElementById('heart_2').src = "https://abejacruz.github.io/Memory-game/img/heart-p.png"
+                document.getElementById('heart_2').src = "./img/heart-p.png"
             }
             if (lives === 0) {
-                document.getElementById('heart_1').src = "https://abejacruz.github.io/Memory-game/img/heart-p.png"
+                document.getElementById('heart_1').src = "./img/heart-p.png"
                 setTimeout(function () {
                     document.getElementById('validate').disabled = true
                     document.getElementById('start').innerText = "Reintentar"

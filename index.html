@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Memory Game</title>
 </head>
+
 <body>
-    <div id="word"> 
+    <header id="pageHeader">
+        <h1>Memory Game</h1>
+    </header>
+    <article id="mainArticle">
+        <h1 id="word">
+
+        </h1>
+        <form id="form" class="form">
+            <input type="text" id="wordInput"  pattern="[A-Za-z ]+" style="color: #000" class="input"
+                placeholder="Palabra" required disabled> 
+                <span id="text"></span>
+            <div class="btn-group">
+                <button class="button" type="submit" id="start">Iniciar</button>
+                <button class="button" type="submit" id="validate" disabled>Validar</button>        
+            </div>
+        </form>
+
+        <br>
+    </article>
+    <nav id="mainNav">
+        <h3>Instrucciones</h3>
+        <p>1) Al Iniciar, saldra una palabra la cual se eliminara en cierto tiempo.</p>
+        <p>2)Debes Indicar que palabra era, si aciertas subieras de nivel si fallas perderas una vida.</p>
+        <p>3)Existen 3 niveles, cada que avances de nivel el tiempo de la palabra en pantalla se reducira.</p>
+        <p>4)Solo tienes 3 vidas.</p>
+    </nav>
+    <div id="siteAds">
+        <img class="heart" id="heart_1" src="./img/heart.png" alt="">
+        <br>
+        <img class="heart heart_1" id="heart_2" src="./img/heart.png" alt="">
+        <br>
+        <img class="heart heart_2" id="heart_3" src="./img/heart.png" alt="">
+        <br>
 
     </div>
-    <form  id="form">
-        <input type="text" id="wordInput" name="value" pattern="[A-Za-z ]+" style="color: #000"  class="input" placeholder="$ Valor">
-        <button class="button" type="submit" name="boton" >Guardar</button>
-    </form>
+    <footer id="pageFooter">Desarrollado por: <a href="https://github.com/AbejaCruz"><strong>AbejaCruz</strong> </a></footer>
+
     <script src="js/funtion.js"></script>
 </body>
+
 </html>

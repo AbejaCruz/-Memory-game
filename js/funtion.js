@@ -17,8 +17,9 @@ const wordsLevelThree = ["Es Blanco", "Mi Vestido", "El Piso", "Esa herida", "Co
     "queda grande", "En general", " estoy bien", "He alquilado", "signo zodiacal", "una manzana", "ojo verde"
 ]
 
+
 const form = document.getElementById("form")
-randomWord()
+
 
 function randomWord() {
 
@@ -58,11 +59,25 @@ function deleteWord() {
 form.addEventListener("submit", async (e) => {
     e.preventDefault()
     const wordInput = form['wordInput']
-
-
-    if (lives >= 0) {
+    if (document.getElementById('validate').disabled === true) {
+        document.getElementById('start').innerText = "Iniciar"
+        document.getElementById('validate').disabled = false
+        document.getElementById('start').disabled = true
+        document.getElementById('wordInput').disabled = false
+        document.getElementById('heart_3').src = "../img/heart.png"
+        document.getElementById('heart_2').src = "../img/heart.png"
+        document.getElementById('heart_1').src = "../img/heart.png"
+        lives = 4
+        randomWord()
+    }
+    if (lives >= 1) {
         if (wordInput.value.toLowerCase() === word.toLowerCase()) {
-            alert("Iguales")
+            document.getElementById("text").innerHTML = `Correcto`
+            document.getElementById("text").style.color = `green`
+            setTimeout(function removeText() {
+                document.getElementById("text").innerHTML = ``
+
+            }, 900)
             lives = lives
             level = level + 1
             if (level === 10) {
@@ -73,18 +88,39 @@ form.addEventListener("submit", async (e) => {
             }
 
         } else {
-            alert("Diferentes")
+
             lives = lives - 1
             level = level - 1
+            if (lives < 3) {
+                document.getElementById("text").innerHTML = `Erraste`
+                document.getElementById("text").style.color = `Red`
+                setTimeout(function removeText() {
+
+                    document.getElementById("text").innerHTML = ``
+
+                }, 900)
+            }
+            if (lives === 2) {
+                document.getElementById('heart_3').src = "../img/heart-p.png"
+            }
+            if (lives === 1) {
+                document.getElementById('heart_2').src = "../img/heart-p.png"
+            }
+            if (lives === 0) {
+                document.getElementById('heart_1').src = "../img/heart-p.png"
+                setTimeout(function () {
+                    document.getElementById('validate').disabled = true
+                    document.getElementById('start').innerText = "Reintentar"
+                    document.getElementById('start').disabled = false
+                    document.getElementById('wordInput').disabled = true
+                }, 500);
+
+            }
             if (level === 0) {
                 level = 1
             }
             randomWord()
         }
 
-
-    } else {
-        alert("perdiste")
     }
-
 })

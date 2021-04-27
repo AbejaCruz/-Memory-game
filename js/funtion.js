@@ -81,7 +81,13 @@ form.addEventListener("submit", async (e) => {
             lives = lives
             level = level + 1
             if (level === 10) {
-                alert("ganaste")
+                alert("Ganaste")
+                setTimeout(function () {
+                    form.reset()
+                    document.getElementById('validate').disabled = true
+                    document.getElementById('start').disabled = false
+                    document.getElementById('wordInput').disabled = true
+                }, 500);
             } else {
 
                 randomWord()
@@ -95,9 +101,7 @@ form.addEventListener("submit", async (e) => {
                 document.getElementById("text").innerHTML = `Erraste`
                 document.getElementById("text").style.color = `Red`
                 setTimeout(function removeText() {
-
                     document.getElementById("text").innerHTML = ``
-
                 }, 900)
             }
             if (lives === 2) {
@@ -108,6 +112,7 @@ form.addEventListener("submit", async (e) => {
             }
             if (lives === 0) {
                 document.getElementById('heart_1').src = "./img/heart-p.png"
+                alert("Perdiste")
                 setTimeout(function () {
                     document.getElementById('validate').disabled = true
                     document.getElementById('start').innerText = "Reintentar"

@@ -11,7 +11,7 @@ HTML, Js y CSS Puro.
 The project is displayed [Here](https://abejacruz.github.io/Memory-game/).
 
 ### Flowchart
-You can see the flow chart [Here](https://raw.githubusercontent.com/AbejaCruz/Save-my-money/main/diagram/memory_game.jpg).
+You can see the flow chart [Here](https://raw.githubusercontent.com/AbejaCruz/Memory-game/main/diagram/memory_game.jpg).
 
 ### How To Use
 
